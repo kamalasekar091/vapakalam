@@ -1,8 +1,5 @@
 <?php
 session_start();
-include 'checkuploadenabled.php';
-
-$variable=returnenabledstatus();
 
 ?>
 
@@ -47,22 +44,13 @@ li a:hover:not(.active) {
 <body>
 
 <ul>
-  <li><a class="active" href="/welcome.php">Home</a></li>
+  <li><a class="active" href="/index.php">Home</a></li>
   <li><a href="/gallery.php">Gallery</a></li>
-<?php
-if($variable == 'on'){
-  echo"<li><a href=\"/upload.php\">Upload</a></li>";
-}
-if($_SESSION['username']=="controller"){
-echo "<li><a href=\"/admin.php\">Admin</a></li>";
-}
-?>
-<li><a href="/logout.php">Log Out</a></li>
+  <li><a href="/up.php">upload</a></li>
 </ul>
 
 <div style="margin-left:25%;padding:1px 16px;height:1000px;">
-<h4 style="float:right" >welcome: <?php echo $_SESSION['username']; ?></h4>
-  <h1> Please select the option in left hand side</h1>
+ <h1> Please select the option in left hand side</h1>
 </div>
 </body>
 </html>
